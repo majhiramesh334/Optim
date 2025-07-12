@@ -1,0 +1,76 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f6f9fb;
+  margin: 0;
+  padding: 0;
+}
+.app-container {
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 24px 32px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.11);
+}
+nav {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+nav button {
+  padding: 6px 16px;
+  background: #1972cb;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+nav button:hover {
+  background: #135fa7;
+}
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0 24px 0;
+}
+form input, form select {
+  font-size: 1em;
+  padding: 7px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+form button[type="submit"] {
+  background: #2da57a;
+  color: #fff;
+  border: none;
+  padding: 7px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.section { margin-bottom: 30px; }
+h2 { color: #136098; }
+#hospitals-list, #doctors-list, #patients-list {
+  background: #ecf4fc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+table {
+  width: 100%;
+  background: #f4f8fb;
+  border-radius: 7px;
+  border-collapse: collapse;
+  margin-top: 6px;
+}
+th, td {
+  border: 1px solid #d7e2ed;
+  padding: 6px 8px;
+  text-align: left;
+}
+th { background: #daf0ff; }
+select { min-width: 120px; }
+@media screen and (max-width: 700px) {
+  .app-container { padding: 6px; }
+  nav { flex-direction: column; gap: 9px; }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hospital & Appointment Management System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-container">
+  <h1>Hospital & Appointment Management System</h1>
+  <nav>
+    <button onclick="showSection('register-hospital')">Hospital Admin</button>
+    <button onclick="showSection('register-doctor')">Doctor</button>
+    <button onclick="showSection('register-patient')">Patient</button>
+    <button onclick="showSection('book-appointment')">Book Appointment</button>
+    <button onclick="showSection('dashboard-hospital')">Hospital Dashboard</button>
+    <button onclick="showSection('dashboard-doctor')">Doctor Dashboard</button>
+    <button onclick="showSection('patient-history')">Patient History</button>
+  </nav>
+  <hr>
+  <div id="register-hospital" class="section">
+    <h2>Register Hospital</h2>
+    <form onsubmit="registerHospital(event)">
+      <input type="text" id="hospital-name" placeholder="Hospital Name" required>
+      <input type="text" id="hospital-location" placeholder="Location" required>
+      <input type="text" id="hospital-departments" placeholder="Departments (comma separated)" required>
+      <button type="submit">Register Hospital</button>
+    </form>
+    <div id="hospitals-list"></div>
+  </div>
+
+  <div id="register-doctor" class="section" style="display:none">
+    <h2>Register Doctor</h2>
+    <form onsubmit="registerDoctor(event)">
+      <input type="text" id="doctor-name" placeholder="Doctor Name" required>
+      <input type="text" id="doctor-qualifications" placeholder="Qualifications" required>
+      <input type="text" id="doctor-specializations" placeholder="Specializations (comma separated)" required>
+      <input type="number" id="doctor-experience" placeholder="Years of Experience" required>
+      <button type="submit">Register Doctor</button>
+    </form>
+    <div id="doctors-list"></div>
+    <div id="associate-hospital"></div>
+  </div>
+
+  <div id="register-patient" class="section" style="display:none">
+    <h2>Register Patient</h2>
+    <form onsubmit="registerPatient(event)">
+      <input type="text" id="patient-name" placeholder="Patient Name" required>
+      <select id="patient-gender" required>
+        <option value="">Gender</option><option>Male</option><option>Female</option>
+      </select>
+      <input type="date" id="patient-dob" required>
+      <input type="text" id="patient-id" placeholder="Unique ID" required>
+      <button type="submit">Register Patient</button>
+    </form>
+    <div id="patients-list"></div>
+  </div>
+
+  <div id="book-appointment" class="section" style="display:none">
+    <h2>Book Appointment</h2>
+    <form onsubmit="searchDoctors(event)">
+      <input type="text" id="filter-specialization" placeholder="Specialization">
+      <input type="text" id="filter-hospital" placeholder="Hospital">
+      <input type="date" id="filter-date">
+      <button type="submit">Search</button>
+    </form>
+    <div id="search-results"></div>
+  </div>
+  
+  <div id="dashboard-hospital" class="section" style="display:none">
+    <h2>Hospital Dashboard</h2>
+    <select id="dashboard-hospital-select" onchange="showHospitalDashboard()"></select>
+    <div id="hospital-dashboard-data"></div>
+  </div>
+  <div id="dashboard-doctor" class="section" style="display:none">
+    <h2>Doctor Dashboard</h2>
+    <select id="dashboard-doctor-select" onchange="showDoctorDashboard()"></select>
+    <div id="doctor-dashboard-data"></div>
+  </div>
+  <div id="patient-history" class="section" style="display:none">
+    <h2>Patient History</h2>
+    <select id="dashboard-patient-select" onchange="showPatientHistory()"></select>
+    <div id="patient-history-data"></div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
